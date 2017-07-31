@@ -1,0 +1,33 @@
+@charset "utf-8";
+//导航
+nav{
+	overflow: hidden;
+	padding: 0.533333rem (10.0-(1.146667 + 0.746667)*5)/2+rem;
+	background-color: #ffffff;
+		box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+	li:nth-child(1),li:nth-child(2),li:nth-child(3),li:nth-child(4),li:nth-child(5){
+		margin-bottom: 0.4rem;
+	}
+	li{
+		width: 1.146667 + 0.746667 + rem;
+		float: left;
+		text-align:center;
+		
+		a{
+			overflow: hidden;
+			display: block;
+			span{
+				
+				 color: #282829;
+				 font-size: 0.32rem;
+			}
+		}
+		img{
+			display: block;
+			margin: 0 auto;
+			width: 1.146667rem;
+				height: 1.146667rem;
+				margin-bottom:0.133333rem;
+		}
+	}
+}

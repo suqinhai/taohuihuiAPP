@@ -1,0 +1,16 @@
+@charset "utf-8";
+.model{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.8;
+  img{
+    width: 5.866667rem;
+    height: 3.44rem;
+    float: right;
+    margin: 20px 20px 0 0;
+  }
+}

@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+// 按钮
+.btn{
+	position:fixed;
+	bottom:0;
+
+	a{
+		display: inline-block;
+		line-height: 1.4rem;
+		float: left;
+		font-size: 0.48rem;
+		text-align: center;
+		color: #fff;
+	}
+	.home{
+		display: inline-block;
+		width: 1.666667rem;
+		background:#fff;
+		overflow: hidden;
+		height: 1.4rem;
+		div{
+			margin: 0 auto;
+			width: 0.64rem;
+			height: 0.573333rem;
+			background:url(./components/../images/home.png);
+			background-size:100% 100%;
+			margin-top:0.266667rem;
+		}
+
+		font{
+			display: block;
+			color: rgba(0, 0, 0, 0.8);
+			line-height:1;
+			font-size: 0.24rem;
+			margin-top:0.133333rem;
+		}
+
+	}
+	.browser{
+		width: 3.306667rem;
+		background-image: linear-gradient(to right, #ff9000, #f3c50f);
+	}
+	.code{
+		width: 5.0rem;
+		background-image: linear-gradient(to right, #ff3c85, #ff57b2);
+	}
+}

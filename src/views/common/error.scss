@@ -1,0 +1,32 @@
+@charset "utf-8";
+#content{
+	.img{
+		padding-top: 1.733333rem;
+		text-align: center;
+		img{
+			width: 4.28rem;
+  			height: 2.653333rem;
+  			display: inline-block;
+		}
+	}
+	.dec{
+		padding-top:0.506667rem;
+		font-size: 0.4rem;
+		width: 4.44rem;
+		margin:0 auto;
+		color: #999;
+	}
+	a{
+		width: 3.48rem;
+  		line-height: 0.933333rem;
+  		border-radius: 0.053333rem;
+  		background-color: #e25a5a;
+  		display: block;
+  		font-size: 0.48rem;
+  		color: #fff;
+  		text-align: center;
+  		margin:0 auto;
+  		margin-top: 0.933333rem;
+  		vertical-align: middle;
+	}
+}

@@ -1,0 +1,39 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,hr,p,ul,li,ol,form,button,input,textarea,menu,dl,dt,dd{margin:0;padding:0;}
+body,button,input,select,textarea{font:14px/1.5 "Microsoft YaHei",\5b8b\4f53,sans-serif,TrueType;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-family:"Microsoft YaHei";font-weight:normal;}
+address,cite,dfn,em,var{font-style:normal;}
+ul,ol,li{list-style:none;}
+img{border:0;display:block;}
+a:link{text-decoration:none;}
+a:visited{text-decoration:none;}
+a:hover{text-decoration:none;}
+a:active{text-decoration:none;}
+a{color:#333;text-decoration:none;outline:none;}
+article,aside,dialog,footer,header,section,nav,figure,menu{diaplay:block;}
+input,select,img{vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+.clear{clear: both;}
+.clearfix{clear:both;display:table;}
+.fl{float:left;}
+.fr{float:right;}
+body{background-color: #efeff4;}
+input {border:none; outline:none;}
+.text-overflow{
+	display:block;                   
+	width:31em;
+	word-break:keep-all;          
+	white-space:nowrap;      
+	overflow:hidden;               
+	text-overflow:ellipsis;        
+}
+
+
+img[lazy=loading],img[lazy=error] {
+ 	background-image:url(../images/default.png);
+	background-size:100%;
+}
+
+
+
+

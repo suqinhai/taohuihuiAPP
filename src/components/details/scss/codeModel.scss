@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+// 淘口令弹窗
+.model{
+	 position: fixed;
+	 z-index: 100;
+	 top:0;
+	 width: 10.0rem;
+	 height: 100%;
+	 background: rgba(0,0,0,0.8);
+
+	 .warp{
+	 	 box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0px 8px 16px 0 rgba(0, 0, 0, 0.3);
+	 	 width: 9.066667rem;
+	 	 border-radius: 0.106667rem;
+	 	 margin:0 auto;
+	 	 position:relative;
+	 	 z-index: 2000;
+	 	 // margin-top:4.533333rem;
+	 	 text-align: center;
+	 	 
+
+	 }
+	 .head{
+	 	width: 9.066667rem;
+  		height: 2.666667rem;
+  		margin:0 auto;
+  		background-image: linear-gradient(to right, #ff3c85, #ff57b2);
+  		border-top-left-radius:0.106667rem;
+		border-top-right-radius:0.106667rem;
+  		.codeLogo{
+  			width: 2.28rem;
+  			height: 2.28rem;
+  			display: inline-block;
+  			background:url(./views/../images/code.png);
+			background-size:100% 100%;
+			margin-top: -1.066667rem;
+  		}
+  		div{
+  			font-size: 0.48rem;
+  			line-height: 1.5;
+  			color: #fff;
+  		}
+	 }
+	 .copy{
+	 		overflow: hidden;
+  			background:#fff;
+  			border-bottom-left-radius:0.106667rem;
+			border-bottom-right-radius:0.106667rem;
+  			a {		
+			  width: 7.733333rem;
+  			  height: 0.933333rem;
+			  line-height: 0.933333rem;
+			  text-shadow: 0px 1px 1px rgba(207, 119, 0, 0.2), 0 0 8px rgba(169, 99, 0, 0.3);
+			  font-size: 0.4rem;
+			  color: #fff;
+			  text-align: center;
+			  display: block;
+			  margin:1.066667rem auto 0.4rem auto;
+			  font-weight: 300;
+			  border-radius: 0.133333rem;
+			  background-image: linear-gradient(to right, #ff9000, #f3c50f), linear-gradient(to right, #ff9000, #f3c50f);
+			  box-shadow: 0px 1px 1px 0 rgba(0, 0, 0, 0.2), 0 0 8px 0 rgba(0, 0, 0, 0.3);
+			  border: solid 1px #ff8400;
+  			}
+  			p{
+  				color: rgba(40, 40, 41, 0.8);
+  				font-size: 0.4rem;
+  				font-weight: 300;
+  				width: 7.72rem;
+				line-height: 1.33;
+				text-align: left;
+				margin: 0 auto;
+				margin-bottom: 1.333333rem;
+  			}
+  	}
+}

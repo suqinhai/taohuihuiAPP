@@ -1,0 +1,110 @@
+@charset "utf-8";
+.content{
+	width: 10.0rem;
+	margin:0 auto;
+	overflow:hidden;
+	.swipe{
+		width: 10.0rem;
+ 		height: 10.0rem;
+	}
+	.shopContent{
+		background-color: #fff;
+		padding: 0.2rem;
+		overflow: hidden;
+		border-bottom:1px solid #ccc;
+		.title{
+			 font-size: 0.48rem;
+			 line-height: 1.33;
+			 color: #282829;
+			 text-align: left;
+		}
+		.sold{
+			color: rgba(0, 0, 0, 0.6);
+			font-size: 0.32rem;
+			font-weight: bold;
+			margin-top: 0.4rem;
+		}
+		.price{
+			font:nth-child(1){
+				font-weight: bold;
+				span{
+					font-size: 0.64rem;
+				}
+				font-size:0.32rem;
+				color: #e60000;
+				vertical-align: middle;
+			}
+			span:nth-child(2){
+				font-size: 0.4rem;
+				color: rgba(0, 0, 0, 0.6);
+				vertical-align: middle;
+				display: inline-block;
+				margin-top: -0.04rem;
+				margin-left: 0.133333rem;
+			}
+			div:nth-child(3){
+				min-width: 1.466667rem;
+				line-height: 0.666667rem;
+				background:url(./views/../images/label.png);
+				background-size:100% 100%;
+				padding-left:0.933333rem;
+				font-size: 0.4rem;
+				color: #ff5d02;
+				text-align: center;
+				font-weight: 500;
+				margin-top: 0.186667rem;
+			}
+		}
+	}
+
+	//推荐理由
+	.reason{
+		background:#fff;
+		margin:0.266667rem 0;
+		padding:0 0.2rem;
+		overflow: hidden;
+		padding-bottom: 0.333333rem;
+		border-top:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+		.title{
+			 text-align: center;
+			 font-size: 0.48rem;
+			 color: #282829;
+			 line-height: 1.2rem;
+		}
+		span{
+			 font-size: 0.346667rem;
+			 line-height: 1.38;
+			 color: rgba(40, 40, 41, 0.8);
+			 
+		}
+	}
+
+	.details{
+		background:#fff;
+		margin:0.266667rem 0;
+		padding:0 0.2rem;
+		overflow: hidden;
+		padding-bottom: 1.4rem;
+		border-top:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+		.title{
+			 text-align: center;
+			 font-size: 0.48rem;
+			 color: #282829;
+			 line-height: 1.2rem;
+		}
+	}
+	
+	.return{
+		width: 1.12rem;
+  		height: 1.12rem;
+  		background:url(./views/../images/return.png);
+		background-size:100% 100%;
+		position:absolute;
+		z-index: 100;
+		margin-top: 0.533333rem;
+		margin-left: 0.4rem;
+	}
+}
+
