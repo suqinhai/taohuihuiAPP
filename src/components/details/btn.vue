@@ -7,10 +7,10 @@
         <a v-if="itemList.terraceName == '天猫' && isWeChat()" class="browser" @click="browserBuy">浏览器购买</a>
 
         <!-- 不是微信浏览器和是天猫商品 -->
-        <a v-if="itemList.terraceName == '天猫' && !isWeChat()" :href="itemList.buyLink ? itemList.buyLink : itemList.skipLink" class="browser">浏览器购买</a>
+        <a v-if="itemList.terraceName == '天猫' && !isWeChat()" :href="itemList.couponLink ? itemList.couponLink : itemList.clickUrl" class="browser">浏览器购买</a>
        
         <!--  不是是天猫商品  -->
-        <a v-if="itemList.terraceName != '天猫'" :href="itemList.buyLink ? itemList.buyLink : itemList.skipLink" class="browser">浏览器购买</a>
+        <a v-if="itemList.terraceName != '天猫'" :href="itemList.couponLink ? itemList.couponLink : itemList.clickUrl" class="browser">浏览器购买</a>
 
         <a href="javascript:;" class="code" @click="codeBuy">淘口令购买</a>
       </div>

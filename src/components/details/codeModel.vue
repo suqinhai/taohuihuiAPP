@@ -6,10 +6,10 @@
 	          <span class="codeLogo"></span>
             <!-- {{data.taoWord}} -->
 
-	          <div id="foo" v-show="isBrowser() == 1">￥3PJUtZYZaM￥</div>
+	          <div id="foo" v-show="isBrowser() == 1">{{data.couponLinkTaoToken}}</div>
             <div v-show="isBrowser() == 2 || isBrowser() == 3 ">
-              <div>￥3PJUtZYZaM￥</div>
-              <input type="text" value="￥3PJUtZYZaM￥" id="textbox" style="width:1px;opacity:0" readonly></input>
+              <div>{{data.couponLinkTaoToken}}</div>
+              <input type="text" :value="data.couponLinkTaoToken" id="textbox" style="width:1px;opacity:0" readonly></input>
             </div>
 
 	        </div>

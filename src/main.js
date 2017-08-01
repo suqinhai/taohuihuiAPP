@@ -10,7 +10,7 @@ import VueAxios from 'vue-axios'
 
 
 import flexible from './assets/js/flexible.js'
-import dplus from './assets/js/dplus.js'
+// import dplus from './assets/js/dplus.js'
 import clipboard from './assets/js/clipboard.js'
 // import copy2clipboard from './assets/js/copy2clipboard.js'
 

@@ -5,19 +5,20 @@
       <!-- 轮播 -->
       <div :class="imgClass"  @click="bigSlider">
         <div class="swipe">
+
           <mt-swipe :auto="auto" :defaultIndex="index">
-            <mt-swipe-item v-for="m in itemList.mainImgJson"><img v-lazy="m.showUrl" width="100%" height="100%"></mt-swipe-item>
+            <mt-swipe-item v-for="m in itemList.mainPic"><img v-lazy="m" width="100%" height="100%"></mt-swipe-item>
           </mt-swipe>
         </div>
       </div>
 
       <div class="shopContent">
          <div class="title">{{ itemList.title }}</div>
-         <div class="sold">{{ itemList.salesCount }}件已售</div>
+         <div class="sold">{{ itemList.biz30day }}件已售</div>
          <div class="price">
-           <font>¥ <span>{{ itemList.discount }}</span></font>
-           <span><del>¥{{ itemList.directPromoPercent }}</del></span>
-           <div class="fr">¥{{ itemList.couponsAmount }}</div>
+           <font>¥ <span>{{ itemList.zkPrice }}</span></font>
+           <span>{{itemList.userType == '0' ? '淘宝':'天猫'}}<!-- <del>¥{{ itemList.directPromoPercent }}</del> --></span>
+           <div class="fr">¥{{ itemList.couponAmount }}</div>
          </div>
       </div>
 
@@ -30,7 +31,7 @@
       <!-- 详情 -->
       <div class="details">
         <div class="title">产品详情</div>
-        <img v-for="i in itemList.introImgJson" v-lazy="i.showUrl" width="100%">
+        <img v-for="i in itemList.detailsPic" v-lazy="i" width="100%">
       </div>
       
       <!-- 按钮 -->
@@ -64,25 +65,25 @@ export default{
 
     mounted:function() {
       var _this = this
-      var url = 'VsoonCat/Web/Product?page=1&pageSize=15&publish=publish&id=' + this.$route.query.productId
+      var url = 'taohuihui/frontend/goods/getDetails?page=1&pageSize=15&_id=' + this.$route.query._id
       this.axios.get(url).then(res => {
         
         // 后台下架没有返回详情页数据返回错误页面
-        if (  !res.data.extra ){
+        if (  !res.data.list[0] ){
            this.$router.push({ name: 'error'})
            return false
         }else{
-          if ( this.isEmptyObject(res.data.extra) ){
+          if ( this.isEmptyObject(res.data.list[0]) ){
             this.$router.push({ name: 'error'})
             return false
           }
         }
 
-        this.itemList = res.data.extra
+        this.itemList = res.data.list[0]
         
         //轮播默认从第几张开始播
-        if ( res.data.extra.mainImgJson ) {
-          res.data.extra.mainImgJson.forEach(function(value,key){
+        if ( res.data.list[0].mainImgJson ) {
+          res.data.list[0].mainImgJson.forEach(function(value,key){
             if ( value.selected == true ){
               _this.index = key
             }

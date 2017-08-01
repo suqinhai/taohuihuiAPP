@@ -1,7 +1,7 @@
 <template>
    <!-- 菜单 -->
     <nav>
-      <li v-for="n in navList">
+      <li v-for="n in navList" :style="'width:' + 100 / navList.length + '%'">
         <router-link :to="{name: 'classPage', query: { columnId: n.id, name: n.name }}">
           <a href="javascript:viod(0)"><img :src="n.url"><span>{{n.name}}</span></a>
         </router-link>
@@ -17,7 +17,7 @@
         }
     },
     mounted(){
-      let url = '/taohuihui/frontend/nav/getNav'
+      let url = '/taohuihui/frontend/bottomMenu/getMenu'
       this.axios.get(url).then(res => {
         this.navList = res.data.list
        
@@ -29,5 +29,5 @@
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped="scoped">
-@import './scss/nav.scss';
+@import './scss/bottomMenu.scss';
 </style>

@@ -28,10 +28,10 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-        '/VsoonCat': {
-            target: 'http://172.16.0.200:180',
+        '/taohuihui': {
+            target: 'http://127.0.0.1:3000',
             pathRewrite: {
-              '^/VsoonCat': '/VsoonCat'
+              '^/taohuihui': '/taohuihui'
             }
         }
     },

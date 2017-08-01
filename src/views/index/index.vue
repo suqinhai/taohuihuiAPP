@@ -1,6 +1,10 @@
 <template>
   <div id="content" class="content" v-title data-title="好惠买">
-  
+    
+
+    <!-- 首页轮播 -->
+    <su-poster></su-poster>
+    
     <!-- 搜索 -->
     <div class="search" v-show="!search">
         <div class="searchText" @click="searchText">好多优惠等来你搜</div>
@@ -17,9 +21,14 @@
       <span><a href="###" @click="cancel">取消</a></span>
     </div>
     
+    
+
     <!-- 菜单 -->
     <su-nav></su-nav>
     
+    <!-- 底部导航菜单 -->
+    <su-bottomMenu></su-bottomMenu>
+
    <!--  每日精选 -->
 
     <section class="itemWarp" v-infinite-scroll="loadMore"
@@ -28,11 +37,11 @@
       <div class="title"><span></span><font>每日精选</font><span></span></div>
       <div class="itemContent">
         <div class="itemList" v-for="i in itemList">
-        <a :href="'/details?productId=' + i.id + '&title=' + i.title">
-        <!--   <router-link :to="{name: 'details', query: { productId: i.id,title: i.title }}"> -->
+        <!-- <a :href="'/details?_id=' + i._id"> -->
+         <router-link :to="{name: 'details', query: { _id: i._id,title: i.title}}"> 
             <!-- 商品图片 -->
-            <div v-if="i.showImg">
-              <img src="" v-lazy="i.showImg">
+            <div v-if="i.pictUrl">
+              <img src="" v-lazy="i.pictUrl">
             </div>
             <div v-else>
               <img src="" v-lazy="m.showUrl" v-for="m in i.mainImgJson" v-if="m.selected">
@@ -41,16 +50,16 @@
             <div class="pd15">
               <div class="itemTitle text-overflow">{{ i.title }}</div>
               <div class="itemCoupon">
-                <span><del>¥{{ i.directPromoPercent }}</del></span>
-                <div>¥{{ i.couponsAmount }}</div>
+                <span>{{ i.couponInfo }}<!-- <del>¥{{ i.directPromoPercent }}</del> --></span>
+                <div>¥{{ i.couponAmount }}</div>
               </div>
               <div class="itemPrice">
-                <div class="fl">¥ <span>{{ i.discount }}</span></div>
-                <div class="fr">{{i.salesCount }}件已售</div>
+                <div class="fl">¥ <span>{{ i.zkPrice }}</span></div>
+                <div class="fr">{{i.biz30day }}件已售</div>
               </div>
             </div>
-         <!--  </router-link> -->
-          </a>
+          </router-link>
+         <!--  </a> -->
         </div>
        
       </div>
@@ -68,9 +77,9 @@
 </template>
 
 <script>
-// import suShade from './../../components/common/shade'
+import suBottomMenu from './../../components/common/bottomMenu'
 import suNav from './../../components/common/nav'
-
+import suPoster from './../../components/common/poster'
 export default{
     data () {
         return {
@@ -130,17 +139,17 @@ export default{
         this.loading = true
         setTimeout(() => {
           
-          let url = 'VsoonCat/Web/Product?page='+ _this.page +'&pageSize='+ _this.pageSize +'&publish=publish&columnId=-1'
+          let url = 'taohuihui/frontend/goods/getItem?page='+ _this.page +'&pageSize='+ _this.pageSize
           _this.axios.get(url).then(res => {
 
             //有数据的时候
-            if ( res.data.extra && res.data.extra.length){
-               _this.itemList = _this.itemList.concat(res.data.extra)
+            if ( res.data.list && res.data.list.length){
+               _this.itemList = _this.itemList.concat(res.data.list)
                _this.page ++
                _this.loading = false
 
                // 判断是不是少于最大pageSize，少于就是以后没有数据了
-               if (res.data.extra.length <  _this.pageSize ){
+               if (res.data.list.length <  _this.pageSize ){
                    _this.showLoading = false;
                }
                
@@ -157,8 +166,9 @@ export default{
       },
     },
     components:{
-      // suShade,
-      suNav
+      suBottomMenu,
+      suNav,
+      suPoster
     }
 }
 </script>
