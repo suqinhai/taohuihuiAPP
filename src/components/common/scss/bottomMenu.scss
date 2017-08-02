@@ -4,7 +4,10 @@ nav{
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	width: 100%;
+	width:100%;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
 	z-index: 100000;
 	overflow: hidden;
 	padding: 0.233333rem 0 0.103333rem;

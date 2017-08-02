@@ -8,28 +8,110 @@
 }
 
 .nav {
-  background-color: #f0f0f5;
+  width: 2.48rem;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1.28rem;
+    background-color: #f4f4f4;
+    margin-top: -.01333rem;
+  }
   li {
-    width: 2.666667rem;
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    height: 1.28rem;
+    line-height: 1.28rem;
+    color: #585c64;
     text-align: center;
-    line-height: 1.0rem;
-    font-size: 0.426667rem;
-    color: #666;
-    position:relative;
-    &:before{
-      content: "";
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #585c64;
+    span {
+      display: inline-block;
+      margin-left: -.04rem;
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        background-color: #e5e5e5;
+        height: 1px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  li.active {
+    color: #222;
+    background-color: #fff;
+    &:after {
+      content: '';
       position: absolute;
-      z-index: 1;
-      pointer-events: none;
-      background-color: #e5e5e5;
-      height: 1px;
       left: 0;
-      right: 0;
-      bottom: 0;
+      top: 0;
+      width: .10667rem;
+      height: 100%;
+      font-size: 0;
+      background-color: #de3d96;
     }
   }
 }
 
-.classify{
-	
+.classify {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  background-color: #fff;
+  width: 7.52rem;
+  .title{
+    font-size: 12px;
+    padding-top: .53333rem;
+    margin: 0 .74667rem 0 .69333rem;
+    letter-spacing: normal;
+    overflow: hidden;
+  }
+  ul {
+    text-align: justify;
+    font-size: 0;
+    overflow: hidden;
+    padding: .53333rem .66667rem 0 .61333rem;
+    li {
+      display: inline-block;
+      color: #222;
+      width: 1.76rem;
+      text-align: center;
+      letter-spacing: normal;
+      img {
+        width: 100%;
+        max-width: 1.65333rem;
+        max-height: 1.65333rem;
+        vertical-align: middle;
+      }
+      div{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        padding: .29333rem 0 .66667rem;
+        line-height: .18667rem;
+        color: #222;
+      }
+    }
+  }
 }

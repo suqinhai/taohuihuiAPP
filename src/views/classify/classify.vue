@@ -3,32 +3,32 @@
     <!-- 左边 -->
     <div class="fl nav">
       <ul>
-        <li>女装内衣</li>
-        <li>女装内衣</li>
-        <li>女装内衣</li>
-        <li>女装内衣</li>
-        <li>女装内衣</li>
-        <li>女装内衣</li>
-        <li>女装内衣</li>
-        <li>女装内衣</li>
-        <li>女装内衣</li>
-        <li>女装内衣</li>
+        <li class="active"><span>女装内衣</span></li>
+        <li><span>女装内衣</span></li>
+        <li><span>女装内衣</span></li>
+        <li><span>女装内衣</span></li>
+        <li><span>女装内衣</span></li>
+        <li><span>女装内衣</span></li>
+        <li><span>女装内衣</span></li>
+        <li><span>女装内衣</span></li>
+        <li><span>女装内衣</span></li>
+        <li><span>女装内衣</span></li>
       </ul>
     </div>
     <!-- 右边 -->
     <div class="fr classify">
-      <h4>热销商品</h4>
+      <h4 class="title">热销商品</h4>
       <ul>
-        <li><img src="" alt=""><span>当季新品</span></img></li>
-        <li><img src="" alt=""><span>连衣裙</span></img></li>
-        <li><img src="" alt=""><span>当季新品</span></img></li>
-        <li><img src="" alt=""><span>当季新品</span></img></li>
-        <li><img src="" alt=""><span>当季新品</span></img></li>
-        <li><img src="" alt=""><span>当季新品</span></img></li>
-        <li><img src="" alt=""><span>当季新品</span></img></li>
-        <li><img src="" alt=""><span>当季新品</span></img></li>
-        <li><img src="" alt=""><span>当季新品</span></img></li>
-        <li><img src="" alt=""><span>当季新品</span></img></li>
+        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
+        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>连衣裙</div></img></li>
+        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
+        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
+        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
+        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
+        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
+        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
+        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
+        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
       </ul>
     </div>
   </div>

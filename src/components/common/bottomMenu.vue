@@ -1,5 +1,6 @@
 <template>
    <!-- 菜单 -->
+   <div class="nav">
     <nav>
       <li v-for="n in navList" :style="'width:' + 100 / navList.length + '%'">
         <router-link :to="{name: 'classPage', query: { columnId: n.id, name: n.name }}">
@@ -7,6 +8,7 @@
         </router-link>
       </li>
     </nav>
+   </div>
 </template>
 
 <script>
