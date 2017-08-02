@@ -55,7 +55,6 @@
     <div v-else style="text-align: center">——抱歉，没有更多商品啦——</div>
     <!-- 遮罩 -->
     <!-- <su-shade></su-shade>  -->
-
     <!-- 回到顶部 -->
     <div id="top" @click="goTop"></div>
   </div>
@@ -83,7 +82,7 @@ export default {
   },
 
   methods: {
-    goTop(){
+    goTop() {
       document.body.scrollTop = 0
     },
     searchText() {

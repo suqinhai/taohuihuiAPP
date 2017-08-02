@@ -1,0 +1,35 @@
+@charset "utf-8";
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.nav {
+  background-color: #f0f0f5;
+  li {
+    width: 2.666667rem;
+    text-align: center;
+    line-height: 1.0rem;
+    font-size: 0.426667rem;
+    color: #666;
+    position:relative;
+    &:before{
+      content: "";
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      background-color: #e5e5e5;
+      height: 1px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+.classify{
+	
+}

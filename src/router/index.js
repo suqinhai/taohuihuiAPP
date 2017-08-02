@@ -14,6 +14,8 @@ export default new Router({
           require(['@/views/index/index'], resolve)
       }
     },
+
+    //首页
     {
       path: '/',
       name: 'index',
@@ -22,8 +24,34 @@ export default new Router({
       }
     },
 
+     // 分类页
+    {
+      path: '/classify',
+      name: 'classify',
+      component: function (resolve) {
+          require(['@/views/classify/classify'], resolve)
+      }
+    },
 
-    // 分类页
+    // 朋友圈
+    {
+      path: '/circle',
+      name: 'circle',
+      component: function (resolve) {
+          require(['@/views/circle/circle'], resolve)
+      }
+    },
+
+    // 我的账号
+    {
+      path: '/account',
+      name: 'account',
+      component: function (resolve) {
+          require(['@/views/account/account'], resolve)
+      }
+    },
+
+    // 菜单详情页
     {
       path: '/classPage',
       name: 'classPage',
