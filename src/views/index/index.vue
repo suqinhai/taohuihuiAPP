@@ -9,9 +9,9 @@
     <div class="search" v-show="search">
       <div class="inputWarp">
         <input autofocus type="text" name="search" placeholder="好多优惠等来你搜" v-model="searchInputText" @keyup.13="onEnter" @keyup="keyup">
-        <a href="###" class="close" v-show="close" @click="empty"></a>
+        <a href="javascript:;" class="close" v-show="close" @click="empty"></a>
       </div>
-      <span><a href="###" @click="cancel">取消</a></span>
+      <span><a href="javascript:;" @click="cancel">取消</a></span>
     </div>
     <!-- 菜单 -->
     <su-nav></su-nav>

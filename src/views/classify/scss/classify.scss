@@ -1,4 +1,12 @@
 @charset "utf-8";
+
+
+
+
+#content {
+  height: 100%;
+}
+
 .fl {
   float: left;
 }
@@ -8,11 +16,18 @@
 }
 
 .nav {
-  width: 2.48rem;
+  position: relative;
+  float: left;
+  width: 2.4rem;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+  ul {
+    width: 2.48rem;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   &:after {
     content: '';
     display: block;
@@ -73,13 +88,19 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
-  height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
   background-color: #fff;
   width: 7.52rem;
-  .title{
+  height: 100%;
+  .banner {
+    margin: .42667rem .42667rem 0 .37333rem;
+    img {
+      width: 100%;
+    }
+  }
+  .title {
     font-size: 12px;
     padding-top: .53333rem;
     margin: 0 .74667rem 0 .69333rem;
@@ -88,7 +109,6 @@
   }
   ul {
     text-align: justify;
-    font-size: 0;
     overflow: hidden;
     padding: .53333rem .66667rem 0 .61333rem;
     li {
@@ -103,7 +123,7 @@
         max-height: 1.65333rem;
         vertical-align: middle;
       }
-      div{
+      div {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -114,4 +134,16 @@
       }
     }
   }
+}
+
+
+.nav ul::-webkit-scrollbar {
+    width: 0; 
+    background: transparent;
+}
+
+.classify::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+    
 }
