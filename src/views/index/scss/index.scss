@@ -173,3 +173,26 @@
 		}
 	}
 }
+
+#top{
+	position:fixed;
+	z-index:1000000;
+	width:1.333333rem;
+	height:1.333333rem;
+	line-height:1.333333rem;
+	border-radius:100%;
+	bottom:2.666667rem;
+	right:0.666667rem;
+	background:rgba(0,0,0,0.7);
+	text-align:center;
+	&:before{
+		content: '';
+		display: inline-block;
+		margin:18% 0;
+		width: 63%;
+		height: 64%;
+		background: url(./views/../images/top.png);
+		background-size:100% 100%;
+	}
+	
+}
