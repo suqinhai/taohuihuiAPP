@@ -1,27 +1,10 @@
 <template>
-  <div id="content" class="content" v-title :data-title="searchInputText + '-好惠买'">
+  <div id="content" class="content" v-title :data-title="title + '-好惠买'">
     <!-- 左边 -->
     <div class="fl nav">
-      <ul>
-        <li class="active"><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
-        <li><span>女装内衣</span></li>
+      <ul class="wrap">
+        <!-- class="active" -->
+        <li v-for="nav in navs" :class="nav._id == classId ? 'active' : '' " :_id="nav._id" @click="clickNav(nav._id)"><span>{{nav.name}}</span></li>
       </ul>
     </div>
     <!-- 右边 -->
@@ -29,26 +12,10 @@
       <div class="banner"><img src="//a.vpimg2.com/upload/flow/2017/08/01/85/15015521805568.jpg"></div>
       <h4 class="title">热销商品</h4>
       <ul>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>连衣裙</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>连衣裙</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
-        <li><img src="//a4.vimage1.com/upload/category/2016/10/26/99/5b939eb2-1c24-442a-b15a-f41fbf0c37c9.jpg" alt=""><div>当季新品</div></img></li>
+        <li v-for="classify in classifys" :_id="classify._id">
+          <img :src="classify.url" alt="">
+          <div>{{classify.name}}</div>
+        </li>
       </ul>
     </div>
   </div>
@@ -57,20 +24,41 @@
 export default {
   data() {
     return {
-      msg: '分类页面',
-      searchInputText: this.$route.query.name,
+      title: '分类',
+      navs:[],
+      classifys:[],
+      classId:''
     }
   },
   mounted() {
 
-  },
-  watch: {
+      let url = '/taohuihui/frontend/classify/getClassify'
+      this.axios.get(url).then(res => {
+        this.navs = res.data.list;
+
+        this.$nextTick(function(args){
+          document.getElementsByClassName('wrap')[0].getElementsByTagName('li')[0].click()
+        })
+
+      }, res => {
+        // error callback
+      });
+
 
   },
-  methods: {
+  methods:{
+    clickNav(_id) {
+      this.classId = _id
+      let url = '/taohuihui/frontend/property/getProperty?classifyId=' + _id
+      this.axios.get(url).then(res => {
+        this.classifys = res.data.list
+    
+      }, res => {
+        // error callback
+      });
+    }
+  }
 
-  },
-  components: {}
 }
 
 </script>

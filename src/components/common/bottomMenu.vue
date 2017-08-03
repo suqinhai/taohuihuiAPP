@@ -3,8 +3,17 @@
    <div class="nav">
     <nav>
       <li v-for="n in navList" :style="'width:' + 100 / navList.length + '%'">
-        <router-link :to="{name: 'classPage', query: { columnId: n.id, name: n.name }}">
-          <a href="javascript:viod(0)"><img :src="n.url"><span>{{n.name}}</span></a>
+        <router-link v-if="n.actionType == 'index'" :to="{name: 'index'}">
+            <img :src="n.url"><span>{{n.name}}</span>
+        </router-link>
+        <router-link v-if="n.actionType == 'classify'" :to="{name: 'classify'}">
+            <img :src="n.url"><span>{{n.name}}</span>
+        </router-link>
+        <router-link v-if="n.actionType == 'circle'" :to="{name: 'circle'}">
+            <img :src="n.url"><span>{{n.name}}</span>
+        </router-link>
+        <router-link v-if="n.actionType == 'account'" :to="{name: 'account'}">
+            <img :src="n.url"><span>{{n.name}}</span>
         </router-link>
       </li>
     </nav>
