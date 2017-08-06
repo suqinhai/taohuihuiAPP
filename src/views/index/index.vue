@@ -66,11 +66,10 @@ import suPoster from './../../components/common/poster'
 export default {
   data() {
     return {
-      msg: '首页',
       show: true,
       itemList: [],
       page: 1,
-      pageSize: 6,
+      pageSize: 20,
       search: false,
       searchInputText: '',
       close: false,
@@ -112,7 +111,7 @@ export default {
     //按回车搜索
     onEnter() {
       if (!this.searchInputText) { return false }
-      this.$router.push({ name: 'searchPage', query: { name: this.searchInputText } })
+      this.$router.push({ name: 'searchPage', params: { name: this.searchInputText } })
     },
 
     loadMore() {

@@ -1,7 +1,7 @@
 <template>
    <!-- 下拉菜单 -->
     <nav v-show="show">
-      <router-link v-for="n in navList" :to="{name: 'classPage', query: { columnId: n.id, name: n.name }}" href="" :class="columnId == n.id ? 'active' : ''">
+      <router-link v-for="n in navList" :to="{name: 'classPage', params: { classifyId: n._id, name:  n.name}}" href="" :class="classifyId == n._id ? 'active' : ''">
       {{n.name}}
       </router-link>
     </nav>
@@ -10,16 +10,16 @@
 
 <script>
   export default {
-    props:['show','columnId'],
+    props:['show','classifyId'],
     data () {
         return {
           navList:[]
         }
     },
     mounted(){
-      let url = '/VsoonCat/Web/getWapColumnLists'
+      let url = '/taohuihui/frontend/nav/getNav'
       this.axios.get(url).then(res => {
-        this.navList = res.data.extra
+        this.navList = res.data.list
        
       }, res => {
         // error callback

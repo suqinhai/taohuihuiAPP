@@ -13,8 +13,10 @@
       <h4 class="title">热销商品</h4>
       <ul>
         <li v-for="classify in classifys" :_id="classify._id">
-          <img :src="classify.url" alt="">
-          <div>{{classify.name}}</div>
+          <router-link :to="{name:'classPage', params: { classifyId: classId, name: classify.name}}">
+            <img :src="classify.url" alt="">
+            <div>{{classify.name}}</div>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -25,34 +27,34 @@ export default {
   data() {
     return {
       title: '分类',
-      navs:[],
-      classifys:[],
-      classId:''
+      navs: [],
+      classifys: [],
+      classId: ''
     }
   },
   mounted() {
 
-      let url = '/taohuihui/frontend/classify/getClassify'
-      this.axios.get(url).then(res => {
-        this.navs = res.data.list;
+    let url = '/taohuihui/frontend/classify/getClassify'
+    this.axios.get(url).then(res => {
+      this.navs = res.data.list;
 
-        this.$nextTick(function(args){
-          document.getElementsByClassName('wrap')[0].getElementsByTagName('li')[0].click()
-        })
+      this.$nextTick(function(args) {
+        document.getElementsByClassName('wrap')[0].getElementsByTagName('li')[0].click()
+      })
 
-      }, res => {
-        // error callback
-      });
+    }, res => {
+      // error callback
+    });
 
 
   },
-  methods:{
+  methods: {
     clickNav(_id) {
       this.classId = _id
       let url = '/taohuihui/frontend/property/getProperty?classifyId=' + _id
       this.axios.get(url).then(res => {
         this.classifys = res.data.list
-    
+
       }, res => {
         // error callback
       });

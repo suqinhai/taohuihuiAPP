@@ -24,12 +24,40 @@ export default new Router({
       }
     },
 
+
+    //活动分类页面
+    {
+      path: '/activityClass/:activityClass/:name',
+      name: 'activityClass',
+      component: function (resolve) {
+          require(['@/views/classify/activityClass'], resolve)
+      }
+    },
+
      // 分类页
     {
       path: '/classify',
       name: 'classify',
       component: function (resolve) {
           require(['@/views/classify/classify'], resolve)
+      }
+    },
+
+     // 登录页
+    {
+      path: '/login',
+      name: 'login',
+      component: function (resolve) {
+          require(['@/views/account/login'], resolve)
+      }
+    },
+
+    //注册页
+    {
+      path: '/register',
+      name: 'register',
+      component: function (resolve) {
+          require(['@/views/account/register'], resolve)
       }
     },
 
@@ -53,7 +81,7 @@ export default new Router({
 
     // 菜单详情页
     {
-      path: '/classPage',
+      path: '/classPage/:classifyId/:name',
       name: 'classPage',
       component: function (resolve) {
           require(['@/views/classPage/classPage'], resolve)
@@ -62,7 +90,7 @@ export default new Router({
 
     // 搜索页
     {
-      path: '/searchPage',
+      path: '/searchPage/:name',
       name: 'searchPage',
       component: function (resolve) {
           require(['@/views/classPage/searchPage'], resolve)

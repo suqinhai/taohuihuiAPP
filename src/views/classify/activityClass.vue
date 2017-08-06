@@ -106,7 +106,7 @@ export default {
       this.show = true
       this.showLoading = true
 
-      let url = '/taohuihui/frontend/goods/getClassifyGoods?page=' + this.page + '&pageSize=' + this.pageSize + '&classifyId=' + this.$route.params.classifyId + '&name=' + this.$route.params.name
+      let url = '/taohuihui/frontend/goods/getActivityClassGoods?page=' + this.page + '&pageSize=' + this.pageSize + '&activityClass=' + this.$route.params.activityClass
 
       // 销量优先
       if (val == 'biz30day') {
@@ -176,7 +176,7 @@ export default {
 
       setTimeout(() => {
 
-          let url = '/taohuihui/frontend/goods/getClassifyGoods?page=' + _this.page + '&pageSize=' + _this.pageSize + '&classifyId=' + this.$route.params.classifyId + '&name=' + this.$route.params.name
+          let url = '/taohuihui/frontend/goods/getActivityClassGoods?page=' + _this.page + '&pageSize=' + _this.pageSize + '&activityClass=' + this.$route.params.activityClass
 
             // 销量优先
           if (this.active == 'biz30day') {
@@ -230,6 +230,6 @@ export default {
 
 </script>
 <style rel="stylesheet/scss" lang="scss" scoped="scoped">
-@import './scss/classPage.scss';
+@import './scss/activityClass.scss';
 
 </style>
