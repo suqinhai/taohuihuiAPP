@@ -28,7 +28,7 @@
         }
     },
     mounted(){
-      let url = '/taohuihui/frontend/bottomMenu/getMenu'
+      let url = '/bottomMenu/getMenu'
       this.axios.get(url).then(res => {
         this.navList = res.data.list
        

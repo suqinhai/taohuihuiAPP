@@ -16,44 +16,46 @@ import clipboard from './assets/js/clipboard.js'
 
 import './assets/scss/base.css'
 
-Vue.use(VueAxios,Axios)
-Vue.use(MintUI)
-
 // basePath
-// var instance = Axios.create({
-//   baseURL: 'http://172.16.0.200:180',
-// });
-
-// 网页标题指令
-Vue.directive('title', {
-  inserted: function (el, binding) {
-    document.title = el.dataset.title
-  },
-  ifUpdate:true
-})
+var instance = Axios.create({
+  baseURL: '/taohuihui/frontend',
+});
 
 // http response 拦截器
 Axios.interceptors.response.use(
-	response => {
-	    return response;
-	},
-	error => {
-	    if (error.response) {
-	        switch (error.response.status) {
-	            case 401:
-	                // 返回 401 清除token信息并跳转到登录页面
-	                store.commit(types.LOGOUT);
-	                router.replace({
-	                    path: 'login',
-	                    query: {redirect: router.currentRoute.fullPath}
-	                })
-	        }
-	    }
-	    return Promise.reject(error.response.data)   // 返回接口返回的错误信息
-});
+  response => {
+    return response;
+  },
+  error => {
+    if (error.response) {
+      switch (error.response.status) {
+        case 401:
+          // 返回 401 清除token信息并跳转到登录页面
+          store.commit(types.LOGOUT);
+          router.replace({
+            path: 'login',
+            query: { redirect: router.currentRoute.fullPath }
+          })
+      }
+    }
+    return Promise.reject(error.response.data) // 返回接口返回的错误信息
+  });
 
 Vue.config.productionTip = false
 
+
+Vue.use(VueAxios, instance)
+Vue.use(MintUI)
+
+
+
+// 网页标题指令
+Vue.directive('title', {
+  inserted: function(el, binding) {
+    document.title = el.dataset.title
+  },
+  ifUpdate: true
+})
 
 
 /* eslint-disable no-new */

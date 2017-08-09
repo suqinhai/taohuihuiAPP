@@ -365,7 +365,7 @@
 }
 
 .icon-register-close {
-/*  background: url(../img/6f8201f0.close.png) no-repeat 50%;*/
+  //background: url(../img/6f8201f0.close.png) no-repeat 50%;
   background-size: 40% auto
 }
 
@@ -414,7 +414,7 @@
 }
 
 .mlogin-captcha-freshen .mlogin-btn-refresh {
-/*  background: url(../img/05574d58.mlogin-icon-refresh.gif) no-repeat 0 0;*/
+  //background: url(../img/05574d58.mlogin-icon-refresh.gif) no-repeat 0 0;
   width: 16px;
   height: 16px;
   position: absolute;
@@ -453,7 +453,7 @@
 }
 
 .models-login .captcha .mlogin-refresh {
-/*  background: url(../img/05574d58.mlogin-icon-refresh.gif) no-repeat 0 0;*/
+  //background: url(../img/05574d58.mlogin-icon-refresh.gif) no-repeat 0 0;
   width: 16px;
   height: 16px;
   position: absolute;
@@ -522,24 +522,23 @@
   position: absolute
 }
 
-.close-in {
+.mlogin-close-in {
   display: inline-block;
+  width: 22px;
+  height: 1px;
+  background: #000;
   font-size: 0;
   line-height: 0;
   vertical-align: middle;
   -webkit-transform: rotate(45deg)
 }
 
-.close-in,
-.close-in:after {
-  width: 22px;
-  height: 1px;
-  background: #000
-}
-
-.close-in:after {
+.mlogin-close-in:after {
   content: ".";
   display: block;
+  width: 22px;
+  height: 1px;
+  background: #000;
   -webkit-transform: rotate(-90deg)
 }
 
@@ -565,7 +564,7 @@
   font-size: .12rem
 }
 
-.icon-err-tips {
+.mlogin-err-tips {
   color: #fff!important;
   background: #ec5648;
   border-radius: 10px;
@@ -580,32 +579,32 @@
   position: absolute
 }
 
-.icon-err-tips-in {
+.mlogin-err-tips-in {
   display: inline-block;
   width: 10px;
+  height: 1px;
   position: absolute;
+  top: 7px;
+  left: 2px;
+  background: #fff;
   font-size: 0;
   line-height: 0;
   vertical-align: middle;
   -webkit-transform: rotate(45deg)
 }
 
-.icon-err-tips-in,
-.icon-err-tips-in:after {
-  height: 1px;
-  top: 7px;
-  left: 2px;
-  background: #fff
-}
-
-.icon-err-tips-in:after {
+.mlogin-err-tips-in:after {
   content: ".";
   display: block;
+  top: 7px;
+  left: 2px;
+  height: 1px;
+  background: #fff;
   -webkit-transform: rotate(-90deg)
 }
 
-.models-login .error-msg,
-.models-register .error-msg {
+.models-login .mlogin-error-msg,
+.models-register .mlogin-error-msg {
   top: 44px;
   color: #e32818;
   font-size: 14px;
@@ -613,7 +612,9 @@
   height: 30px;
   position: absolute;
   background: #fffada;
-  width: 100%
+  width: 100%;
+  padding-left: 38px;
+  z-index: 10
 }
 
 .models-login .error-msg>span,
@@ -630,12 +631,11 @@
 }
 
 .models-login .m-login-error>span {
-  margin-left: 36px;
   color: #c93c29
 }
 
-.models-login .error-msg .iconfont-roundclosefill,
-.models-register .error-msg .iconfont-roundclosefill {
+.models-login .mlogin-error-msg .iconfont-roundclosefill,
+.models-register .mlogin-error-msg .iconfont-roundclosefill {
   color: #fff;
   background: #ee948b;
   border-radius: 10px;
@@ -720,7 +720,7 @@
 .models-login .ui-form-item .icon-show-password {
   width: 50px;
   height: 52px;
-/*  background: url(../img/fe24f3c7.hidepassword.png) no-repeat 50%;*/
+  //background: url(../img/fe24f3c7.hidepassword.png) no-repeat 50%;
   background-size: 50% auto;
   position: absolute;
   top: 0;
@@ -728,14 +728,14 @@
 }
 
 .models-login .ui-form-item .mlogin-ipt-show {
-/*  background: url(../img/441a0c3e.showpassword.png) no-repeat 50%;*/
+  //background: url(../img/441a0c3e.showpassword.png) no-repeat 50%;
   background-size: 50% auto
 }
 
 .models-login .icon-login-logo {
-  width: 95px;
+  width: 125px;
   height: 50px;
-  //background: url(./views/../images/85329d50.newlogo.png) no-repeat 0 0;
+  background: url(./views/../images/85329d50.newlogo.png) no-repeat 0 0;
   background-size: 100% auto
 }
 
@@ -798,8 +798,8 @@
 }
 
 .models-login .models-logo {
-/*  background: #f6f6f6 url(../img/efd965eb.login_bg.png) no-repeat 0 0;*/
-  height: 80px;
+  //background: #f6f6f6 url(../img/3a93a8bf.login_bg.jpg) no-repeat 0 0;
+  height: 170px;
   display: box;
   display: -webkit-box;
   text-align: center;
@@ -1137,7 +1137,7 @@
   top: 0;
   width: 40px;
   height: 40px;
-/*  background: url(../img/5784f415.password-icons.png) no-repeat;*/
+  //background: url(../img/5784f415.password-icons.png) no-repeat;
   background-size: 100%
 }
 

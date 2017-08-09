@@ -20,7 +20,7 @@ export default {
     }
   },
   mounted() {
-    let url = '/taohuihui/frontend/poster/getPoster'
+    let url = '/poster/getPoster'
     this.axios.get(url).then(res => {
       this.navPoster = res.data.list
     }, res => {

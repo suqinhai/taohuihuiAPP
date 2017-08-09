@@ -1,5 +1,5 @@
 <template>
-  <div id="content" class="content" v-title :data-title="title + '-好惠买'">
+  <div id="content" class="content" v-title :data-title="title + '-淘慧慧'">
     <!-- 左边 -->
     <div class="fl nav">
       <ul class="wrap">
@@ -34,7 +34,7 @@ export default {
   },
   mounted() {
 
-    let url = '/taohuihui/frontend/classify/getClassify'
+    let url = '/classify/getClassify'
     this.axios.get(url).then(res => {
       this.navs = res.data.list;
 
@@ -51,7 +51,7 @@ export default {
   methods: {
     clickNav(_id) {
       this.classId = _id
-      let url = '/taohuihui/frontend/property/getProperty?classifyId=' + _id
+      let url = '/property/getProperty?classifyId=' + _id
       this.axios.get(url).then(res => {
         this.classifys = res.data.list
 

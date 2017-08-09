@@ -1,5 +1,5 @@
 <template>
-  <div id="content" class="content" v-title :data-title="title + '-好惠买'">
+  <div id="content" class="content" v-title :data-title="title + '-淘慧慧'">
     <!-- 头部菜单 -->
     <div class="classPage">
       <div class="pullDown">
@@ -36,9 +36,9 @@
               <img src="" v-lazy="m.showUrl" v-for="m in i.mainImgJson" v-if="m.selected">
             </div>
             <div class="pd15">
-              <div class="itemTitle text-overflow">{{ i.title }}</div>
+              <div class="itemTitle text-overflow">{{ i.title.replace(/<(?:.|\s)*?>/g,'') }}</div>
               <div class="itemCoupon">
-                <span>{{ i.couponInfo }}<!-- <del>¥{{ i.directPromoPercent }}</del> --></span>
+                <span><del>¥{{ i.reservePrice }}</del></span>
                 <div>¥{{ i.couponAmount }}</div>
               </div>
               <div class="itemPrice">
@@ -106,7 +106,7 @@ export default {
       this.show = true
       this.showLoading = true
 
-      let url = '/taohuihui/frontend/goods/getClassifyGoods?page=' + this.page + '&pageSize=' + this.pageSize + '&classifyId=' + this.$route.params.classifyId + '&name=' + this.$route.params.name
+      let url = '/goods/getClassifyGoods?page=' + this.page + '&pageSize=' + this.pageSize + '&classifyId=' + this.$route.params.classifyId + '&name=' + this.$route.params.name
 
       // 销量优先
       if (val == 'biz30day') {
@@ -176,7 +176,7 @@ export default {
 
       setTimeout(() => {
 
-          let url = '/taohuihui/frontend/goods/getClassifyGoods?page=' + _this.page + '&pageSize=' + _this.pageSize + '&classifyId=' + this.$route.params.classifyId + '&name=' + this.$route.params.name
+          let url = '/goods/getClassifyGoods?page=' + _this.page + '&pageSize=' + _this.pageSize + '&classifyId=' + this.$route.params.classifyId + '&name=' + this.$route.params.name
 
             // 销量优先
           if (this.active == 'biz30day') {

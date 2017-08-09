@@ -1,39 +1,42 @@
 <template>
   <div>
-    <div class="models-login" id="J-models-login-wrap">
+    <div class="models-login" id="J-models-login-wrap" marsseadclick="">
       <div class="models-header J-mobile-fast-login-header" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
-        <h2>密码登录</h2>
+        <h2>找回密码</h2>
         <a href="javascript:;" class="iconfont iconfont-close2 close J-mlogin-close" style="display: none;"></a>
         <a href="javascript;" @click="back" class="m-login-back-btn J-mlogin-back-new"></a>
       </div>
       <div class="models-body">
         <form class="ui-form">
-          <div v-if="msg != ''" class="mlogin-error-msg hide J-error-msg" style="display: block; transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
-            <i class="mlogin-err-tips">
-                    <span class="mlogin-err-tips-in" @click="close">{{msg}}</span>
-                </i>
-            <span>{{msg}}</span>
-          </div>
           <div class="J-login-wrap" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
             <div class="ui-form-item ui-form-item-bd">
               <label for="username">账号</label>
               <input type="text" v-model="form.user" name="username" placeholder="请输入账号" class="J-mlogin-ipt J-mlogin-ipt-username">
             </div>
             <div class="ui-form-item">
-              <label for="password">密码</label>
+              <label for="password">新密码</label>
               <input type="password" v-model="form.password" name="password" onpaste="return false;" placeholder="请输入密码" class="J-mlogin-ipt J-mlogin-ipt-password">
             </div>
+            <div class="ui-form-item">
+              <label for="mobile">QQ邮箱</label>
+              <input name="mobile" type="text" v-model="form.email" placeholder="请输入QQ邮箱" class="J-mlogin-ipt J-mlogin-ipt-mobile">
+            </div>
+            <div class="ui-form-item ui-form-item-r">
+              <label for="authcode">验证码</label>
+              <input class="J-mlogin-ipt J-mlogin-ipt-authcode"  type="text" placeholder="请输入验证码" maxlength="6" v-model="form.validation">
+              <button class="J-mlogin-get-login-authcode" type="button">获取验证码</button>
+            </div>
             <div class="submit-box J-mlogin-submit-box">
-              <a href="javascript:void(0);" :class="'J-mlogin-submit ui-button ui-button-primary submitFast disabled'" v-if="form.password=='' || form.user==''">登录</a>
-              <a href="javascript:void(0);" :class="'J-mlogin-submit ui-button ui-button-primary submitFast'" v-else @click="login">登录</a>
+              <a href="javascript:void(0);" :class="'J-mlogin-submit ui-button ui-button-primary submitFast disabled'" v-if="form.password=='' || form.user=='' || form.email=='' || form.validation==''">修改密码</a>
+              <a href="javascript:void(0);" :class="'J-mlogin-submit ui-button ui-button-primary submitFast'" v-else @click="login">修改密码</a>
             </div>
             <div>
-              <router-link :to="{name: 'findPassword'}" class="frogot-pwd" @click="login"> 忘记密码？</router-link>
+              <a href="###" class="frogot-pwd">注册账号？</a>
             </div>
             <div class="models-footer">
               <fieldset class="J-login-models-m">
                 <legend>或</legend>
-                <router-link :to="{name: 'register'}" class="login-pop-mobile J-mlogin-mobile-new" @click="login"> QQ邮箱注册登录</router-link>
+                <router-link :to="{name: 'login'}" class="login-pop-mobile J-mlogin-login-normal"> 密码登录</router-link>
               </fieldset>
             </div>
           </div>
@@ -54,12 +57,12 @@ export default {
   data() {
     return {
       searchInputText: this.$route.query.name,
-      msg: '',
       form: {
         user: '',
-        password: ''
-      },
-
+        password: '',
+        email:'',
+        validation:''
+      }
     }
   },
   mounted() {
@@ -74,12 +77,8 @@ export default {
       this.$router.go(-1)
     },
 
-    close() {
-      this.msg = ''
-    },
-
     login() {
-      let url = '/user/login';
+      let url = '/user/modify';
 
       if (this.form.user == '') {
         return false
@@ -87,12 +86,16 @@ export default {
       if (this.form.password == '') {
         return false
       }
+      if (this.form.email == '') {
+        return false
+      }
+      if (this.form.validation == '') {
+        return false
+      }
+
       this.axios.post(url, this.form).then(res => {
-        if (res.data.code == 0) {
-          this.msg = res.data.msg
-        }
-        
         this.navList = res.data.list
+
       }, res => {
         // error callback
       });

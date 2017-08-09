@@ -10,8 +10,8 @@ export default new Router({
     {
       path: '/index',
       name: 'index',
-      component:function (resolve) {
-          require(['@/views/index/index'], resolve)
+      component: function(resolve) {
+        require(['@/views/index/index'], resolve)
       }
     },
 
@@ -19,8 +19,8 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: function (resolve) {
-          require(['@/views/index/index'], resolve)
+      component: function(resolve) {
+        require(['@/views/index/index'], resolve)
       }
     },
 
@@ -29,26 +29,26 @@ export default new Router({
     {
       path: '/activityClass/:activityClass/:name',
       name: 'activityClass',
-      component: function (resolve) {
-          require(['@/views/classify/activityClass'], resolve)
+      component: function(resolve) {
+        require(['@/views/classify/activityClass'], resolve)
       }
     },
 
-     // 分类页
+    // 分类页
     {
       path: '/classify',
       name: 'classify',
-      component: function (resolve) {
-          require(['@/views/classify/classify'], resolve)
+      component: function(resolve) {
+        require(['@/views/classify/classify'], resolve)
       }
     },
 
-     // 登录页
+    // 登录页
     {
       path: '/login',
       name: 'login',
-      component: function (resolve) {
-          require(['@/views/account/login'], resolve)
+      component: function(resolve) {
+        require(['@/views/account/login'], resolve)
       }
     },
 
@@ -56,8 +56,17 @@ export default new Router({
     {
       path: '/register',
       name: 'register',
-      component: function (resolve) {
-          require(['@/views/account/register'], resolve)
+      component: function(resolve) {
+        require(['@/views/account/register'], resolve)
+      }
+    },
+
+    //找回密码
+    {
+      path: '/findPassword',
+      name: 'findPassword',
+      component: function(resolve) {
+        require(['@/views/account/findPassword'], resolve)
       }
     },
 
@@ -65,8 +74,8 @@ export default new Router({
     {
       path: '/circle',
       name: 'circle',
-      component: function (resolve) {
-          require(['@/views/circle/circle'], resolve)
+      component: function(resolve) {
+        require(['@/views/circle/circle'], resolve)
       }
     },
 
@@ -74,8 +83,8 @@ export default new Router({
     {
       path: '/account',
       name: 'account',
-      component: function (resolve) {
-          require(['@/views/account/account'], resolve)
+      component: function(resolve) {
+        require(['@/views/account/account'], resolve)
       }
     },
 
@@ -83,8 +92,8 @@ export default new Router({
     {
       path: '/classPage/:classifyId/:name',
       name: 'classPage',
-      component: function (resolve) {
-          require(['@/views/classPage/classPage'], resolve)
+      component: function(resolve) {
+        require(['@/views/classPage/classPage'], resolve)
       }
     },
 
@@ -92,8 +101,8 @@ export default new Router({
     {
       path: '/searchPage/:name',
       name: 'searchPage',
-      component: function (resolve) {
-          require(['@/views/classPage/searchPage'], resolve)
+      component: function(resolve) {
+        require(['@/views/classPage/searchPage'], resolve)
       }
     },
 
@@ -101,25 +110,25 @@ export default new Router({
     {
       path: '/details',
       name: 'details',
-      component: function (resolve) {
-          require(['@/views/details/details'], resolve)
+      component: function(resolve) {
+        require(['@/views/details/details'], resolve)
       }
     },
 
-    
+
     // 错误页面
     {
       path: '/error',
       name: 'error',
-      component: function (resolve) {
-          require(['@/views/common/error'], resolve)
+      component: function(resolve) {
+        require(['@/views/common/error'], resolve)
       }
     },
     {
       path: '*',
       name: 'error',
-      component:  function (resolve) {
-          require(['@/views/common/error'], resolve)
+      component: function(resolve) {
+        require(['@/views/common/error'], resolve)
       }
     },
   ]

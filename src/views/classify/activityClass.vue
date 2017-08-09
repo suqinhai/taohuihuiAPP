@@ -1,5 +1,5 @@
 <template>
-  <div id="content" class="content" v-title :data-title="title + '-好惠买'">
+  <div id="content" class="content" v-title :data-title="title + '-淘慧慧'">
     <!-- 头部菜单 -->
     <div class="classPage">
       <div class="pullDown">
@@ -106,7 +106,7 @@ export default {
       this.show = true
       this.showLoading = true
 
-      let url = '/taohuihui/frontend/goods/getActivityClassGoods?page=' + this.page + '&pageSize=' + this.pageSize + '&activityClass=' + this.$route.params.activityClass
+      let url = '/goods/getActivityClassGoods?page=' + this.page + '&pageSize=' + this.pageSize + '&activityClass=' + this.$route.params.activityClass
 
       // 销量优先
       if (val == 'biz30day') {
@@ -176,7 +176,7 @@ export default {
 
       setTimeout(() => {
 
-          let url = '/taohuihui/frontend/goods/getActivityClassGoods?page=' + _this.page + '&pageSize=' + _this.pageSize + '&activityClass=' + this.$route.params.activityClass
+          let url = '/goods/getActivityClassGoods?page=' + _this.page + '&pageSize=' + _this.pageSize + '&activityClass=' + this.$route.params.activityClass
 
             // 销量优先
           if (this.active == 'biz30day') {

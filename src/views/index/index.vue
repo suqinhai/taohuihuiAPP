@@ -1,5 +1,5 @@
 <template>
-  <div id="content" class="content" v-title data-title="好惠买">
+  <div id="content" class="content" v-title data-title="淘慧慧">
     <!-- 首页轮播 -->
     <su-poster></su-poster>
     <!-- 搜索 -->
@@ -33,9 +33,9 @@
               <img src="" v-lazy="m.showUrl" v-for="m in i.mainImgJson" v-if="m.selected">
             </div>
             <div class="pd15">
-              <div class="itemTitle text-overflow">{{ i.title }}</div>
+              <div class="itemTitle text-overflow">{{ i.title.replace(/<(?:.|\s)*?>/g,'') }}</div>
               <div class="itemCoupon">
-                <span>{{ i.couponInfo }}<!-- <del>¥{{ i.directPromoPercent }}</del> --></span>
+                <span><del>¥{{ i.reservePrice }}</del></span>
                 <div>¥{{ i.couponAmount }}</div>
               </div>
               <div class="itemPrice">
@@ -123,7 +123,7 @@ export default {
       this.loading = true
       setTimeout(() => {
 
-        let url = 'taohuihui/frontend/goods/getItem?page=' + _this.page + '&pageSize=' + _this.pageSize
+        let url = '/goods/getItem?page=' + _this.page + '&pageSize=' + _this.pageSize
         _this.axios.get(url).then(res => {
 
           //有数据的时候

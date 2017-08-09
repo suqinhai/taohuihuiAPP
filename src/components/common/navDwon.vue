@@ -17,7 +17,7 @@
         }
     },
     mounted(){
-      let url = '/taohuihui/frontend/nav/getNav'
+      let url = '/nav/getNav'
       this.axios.get(url).then(res => {
         this.navList = res.data.list
        
